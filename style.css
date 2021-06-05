@@ -15,3 +15,28 @@
 .checkbox-round:checked[type=checkbox] {
     background-image: unset;
 }
+
+.checkbox-square[type=checkbox] {
+    background-color: white;
+    border-radius: 0%;
+    border: 1px solid black;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-square:checked {
+    background-color: black;
+}
+
+.checkbox-square:checked[type=checkbox] {
+    background-image: unset;
+}
+
+input.input-underline-only {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0%;
+  border-bottom: 1px solid black;
+}
