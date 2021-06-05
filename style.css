@@ -1,0 +1,17 @@
+
+.checkbox-round[type=checkbox] {
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: gray;
+}
+
+.checkbox-round:checked[type=checkbox] {
+    background-image: unset;
+}
