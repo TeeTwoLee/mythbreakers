@@ -1,36 +1,36 @@
 
 .checkbox-round[type=checkbox] {
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid black;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .checkbox-round:checked {
-    background-color: gray;
+  background-color: gray;
 }
 
 .checkbox-round:checked[type=checkbox] {
-    background-image: unset;
+  background-image: unset;
 }
 
 .checkbox-square[type=checkbox] {
-    background-color: white;
-    border-radius: 0%;
-    border: 1px solid black;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
+  background-color: white;
+  border-radius: 0%;
+  border: 1px solid black;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .checkbox-square:checked {
-    background-color: black;
+  background-color: black;
 }
 
 .checkbox-square:checked[type=checkbox] {
-    background-image: unset;
+  background-image: unset;
 }
 
 input.input-underline-only {
@@ -39,4 +39,10 @@ input.input-underline-only {
   background: transparent;
   border-radius: 0%;
   border-bottom: 1px solid black;
+}
+
+.checkbox-sm {
+  margin-top: 7px;
+  width: .7rem;
+  height: .7rem;
 }
