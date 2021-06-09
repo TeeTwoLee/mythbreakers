@@ -44,9 +44,20 @@ input.input-underline-only {
 }
 
 .checkbox-sm {
-  margin-top: 7px;
   width: .7rem;
   height: .7rem;
+}
+
+.checkbox-sm-top-margin {
+  margin-top: 7px;
+}
+
+.font-size-sm {
+  font-size: small;
+}
+
+.font-size-sm input.input-underline-only {
+  background: linear-gradient(#000, #000) center bottom 2px /calc(100% - 10px) 1px no-repeat;
 }
 
 .between-floats {
@@ -54,8 +65,8 @@ input.input-underline-only {
   position: relative;
 }
 .between-floats input{
-  width:100%;
-  -moz-box-sizing:border-box;
-  -webkit-box-sizing:border-box;
-  box-sizing:border-box;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
