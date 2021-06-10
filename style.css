@@ -44,6 +44,7 @@ input.input-underline-only {
 }
 
 .checkbox-sm {
+  margin-top: 5px;
   width: .7rem;
   height: .7rem;
 }
