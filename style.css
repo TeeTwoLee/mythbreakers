@@ -75,3 +75,11 @@ input.input-underline-only {
 .full-width {
   width: 100%;
 }
+
+.low-margin-table th, .low-margin-table td {
+  padding: 1px;
+  font-size: small;
+}
+.low-margin-table input.input-underline-only {
+  background: linear-gradient(#000, #000) center bottom 2px /calc(100% - 10px) 1px no-repeat;
+}
