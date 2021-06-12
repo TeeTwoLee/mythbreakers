@@ -43,22 +43,24 @@ input.input-underline-only {
   padding: 0px 4px 0px 4px;
 }
 
-.checkbox-sm {
-  margin-top: 5px;
-  width: .7rem;
-  height: .7rem;
-}
-
-.checkbox-sm-top-margin {
-  margin-top: 7px;
-}
-
 .font-size-sm {
   font-size: small;
 }
 
 .font-size-sm input.input-underline-only {
   background: linear-gradient(#000, #000) center bottom 2px /calc(100% - 10px) 1px no-repeat;
+}
+
+.checkbox-sm {
+  margin-top: 5px;
+  width: .7rem;
+  height: .7rem;
+}
+
+.font-size-sm .checkbox-round, .font-size-sm .checkbox-square {
+  margin-top: 7px;
+  width: .7rem;
+  height: .7rem;
 }
 
 .between-floats {
@@ -82,4 +84,30 @@ input.input-underline-only {
 }
 .low-margin-table input.input-underline-only {
   background: linear-gradient(#000, #000) center bottom 2px /calc(100% - 10px) 1px no-repeat;
+}
+
+@media only screen and (max-width: 767px) {
+  .font-size-sm {
+    font-size: unset;
+  }
+
+  /* Reset size on small screens */
+  .checkbox-sm, .font-size-sm .checkbox-round, .font-size-sm .checkbox-square {
+    margin-top: 4px;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .font-size-sm {
+    font-size: unset;
+  }
+
+  /* Reset size on small screens */
+  .checkbox-sm, .font-size-sm .checkbox-round, .font-size-sm .checkbox-square {
+    margin-top: 4px;
+    width: 1rem;
+    height: 1rem;
+  }
 }
