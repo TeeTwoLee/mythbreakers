@@ -439,7 +439,7 @@ export default function Gura() {
                       <input className="form-check-input checkbox-round checkbox-sm" type="checkbox" value=""/>
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value="Aggresive Light Weapon"/>
+                      <input type="text" className="input-underline-only" placeholder="" value="Aggressive Light Weapon"/>
                     </div>
                   </div>
                 </div>
@@ -1054,34 +1054,34 @@ export default function Gura() {
             <div className="col-md">
               <h2 className="text-center">History</h2>
               <div>
-                {/* <textarea style={{width: "100%", "min-height": "200px"}}> */}
-                <textarea style={{width: "100%"}}>
+                <textarea style={{width: "100%", minHeight: "200px"}}>
       Comes from the very small town of Beltbuckle. A young woman who grew up on her family&apos;s farm with her ma, pa, and her younger sister. Not much happens in Belt Buckle. The town has 25 people in it. So she introduces herself as Scout from Belt Buckle. At a very young age, her pa taught her how to forge horseshoes and she felt that knives were the next step, so she knows how to forge things. Forging has caused her hearing to get worse since she rarely wore ear protection. She likes doing donuts and driving recklessly with pa&apos;s old Ford. Pa would rather she be useful and put a tractor to use, Scout doesn&apos;t think they go fast enough. Scout was never taught to read past basic labels such as toxic, do not ingest, and her social skills are very lacking. Scout has ample rural survival skills, little to no knowledge of modern cityfolk skills aside from what she learned from outdated VHS and DVD tapes. Farm life for Scout has been rather lonely. Aside from her family&apos;s company and those around her in Belt Buckle, she&apos;s been alone for the majority of her life. She lacks empathy and can be selfish due to always having to make things work for herself.</textarea>
               </div>
               <h2 className="text-center">Description</h2>
               <div className="row">
-                {/* <textarea style={{width: "100%", "min-height": "100px"}}> */}
-                <textarea style={{width: "100%"}}>
-      Muscular, Headstrong, Vulgar (Swears), Opportunist, Daredevil, Illiterate, Hard-of-hearing
-      Strong-willed.
-      US southern country accent
-      Scout likes knives, blades, swords, etc. She also likes forging and farm activities.
-      Studied and forged the blade.
-      Obsessed with watching old films, western to samurai. Works with her hands, not her head. Not dumb, necessarily but...
-      Scout wears &quot;Forge goggles&quot; on her head.
-      Not mean-spirited, but just doesn&apos;t think of other people. More of a lone wolf. Maybe hesitation towards people she doesn&apos;t know. Catious of outsiders.
-      Likes kicking down doors because it&apos;s fun and she can.
-      She likes to wear a homemade eyepatch. She doesn&apos;t need an eyepatch, her eyes work fine. The eyepatch can also be used as gauze/tourniquet.
-      Scout wouldn&apos;t wear a bra. Slim on top, bottom-heavy/pear-shaped.
-      Long hair
-      Foot Size: 7</textarea>
+                <div>
+                  <textarea style={{width: "100%", minHeight: "100px"}}>
+Muscular, Headstrong, Vulgar (Swears), Opportunist, Daredevil, Illiterate, Hard-of-hearing
+Strong-willed.
+US southern country accent
+Scout likes knives, blades, swords, etc. She also likes forging and farm activities.
+Studied and forged the blade.
+Obsessed with watching old films, western to samurai. Works with her hands, not her head. Not dumb, necessarily but...
+Scout wears &quot;Forge goggles&quot; on her head.
+Not mean-spirited, but just doesn&apos;t think of other people. More of a lone wolf. Maybe hesitation towards people she doesn&apos;t know. Catious of outsiders.
+Likes kicking down doors because it&apos;s fun and she can.
+She likes to wear a homemade eyepatch. She doesn&apos;t need an eyepatch, her eyes work fine. The eyepatch can also be used as gauze/tourniquet.
+Scout wouldn&apos;t wear a bra. Slim on top, bottom-heavy/pear-shaped.
+Long hair
+Foot Size: 7</textarea>
+                </div>
                 <div className="col">
                   <div>
                     <div className="float-start">
                       Age:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value="18-20"/>
+                      <input type="text" className="input-underline-only" placeholder="" value="18"/>
                     </div>
                   </div>
                   <div>
@@ -1123,7 +1123,7 @@ export default function Gura() {
                       Weight:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value="145 lb (65.8 kg) (muscular)"/>
+                      <input type="text" className="input-underline-only" placeholder="" value="145 lb (65.8 kg)"/>
                     </div>
                   </div>
                   <div>
