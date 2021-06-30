@@ -1,16 +1,113 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+.checkbox-round[type=checkbox] {
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.checkbox-round:checked {
+  background-color: gray;
 }
 
-* {
+.checkbox-round:checked[type=checkbox] {
+  background-image: unset;
+}
+
+.checkbox-square[type=checkbox] {
+  background-color: white;
+  border-radius: 0%;
+  border: 1px solid black;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-square:checked {
+  background-color: black;
+}
+
+.checkbox-square:checked[type=checkbox] {
+  background-image: unset;
+}
+
+input.input-underline-only {
+  border: 0;
+  outline: 0;
+  background: linear-gradient(#000, #000) center bottom 4px /calc(100% - 10px) 1px no-repeat;
+  /* background: transparent; */
+  /* border-radius: 0%; */
+  /* border-bottom: 1px solid black; */
+  padding: 0px 4px 0px 4px;
+}
+
+.font-size-sm {
+  font-size: small;
+}
+
+.font-size-sm input.input-underline-only {
+  background: linear-gradient(#000, #000) center bottom 2px /calc(100% - 10px) 1px no-repeat;
+}
+
+.checkbox-sm {
+  margin-top: 5px;
+  width: .7rem;
+  height: .7rem;
+}
+
+.font-size-sm .checkbox-round, .font-size-sm .checkbox-square {
+  margin-top: 7px;
+  width: .7rem;
+  height: .7rem;
+}
+
+.between-floats {
+  overflow: hidden;
+  position: relative;
+}
+.between-floats input{
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.low-margin-table th, .low-margin-table td {
+  padding: 1px;
+  font-size: small;
+}
+.low-margin-table input.input-underline-only {
+  background: linear-gradient(#000, #000) center bottom 2px /calc(100% - 10px) 1px no-repeat;
+}
+
+@media only screen and (max-width: 767px) {
+  .font-size-sm {
+    font-size: unset;
+  }
+
+  /* Reset size on small screens */
+  .checkbox-sm, .font-size-sm .checkbox-round, .font-size-sm .checkbox-square {
+    margin-top: 4px;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .font-size-sm {
+    font-size: unset;
+  }
+
+  /* Reset size on small screens */
+  .checkbox-sm, .font-size-sm .checkbox-round, .font-size-sm .checkbox-square {
+    margin-top: 4px;
+    width: 1rem;
+    height: 1rem;
+  }
 }
