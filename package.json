@@ -5,7 +5,7 @@
   "description": "Myth Breakers interactive character sheet fan site",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export && rm -r docs && cp -R out docs",
     "export": "next export",
     "start": "next start",
     "lint": "next lint"
