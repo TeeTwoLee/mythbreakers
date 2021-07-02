@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { meritData, meritName } from '../data/merits';
 import { flawData, flawName } from '../data/flaws';
@@ -24,6 +25,9 @@ export interface SheetProps {
   // meta
   metaTitle: string
   metaDescription: string
+
+  source?: string
+  sourceDescription?: string
 
   // description
   name: string
@@ -225,6 +229,8 @@ export default function Sheet(props: SheetProps) {
           {/* <!-- Description --> */}
           <div className="mb-2">
             This character sheet lets you click on the merits and flaws to see additional details. Check out the <a href="https://youtube.com/playlist?list=PLOdqKo8BGAdhgmdU8CxkhY1ebt0ZMtgdI">Hololive EN TTRPG</a>.
+            <br/>
+            {props.sourceDescription && <React.Fragment> {props.sourceDescription}</React.Fragment>}{props.source && <React.Fragment> (<a href={props.source}>source</a>)</React.Fragment>}
           </div>
 
           <h1 className="text-center">Hunter: The Vigil</h1>

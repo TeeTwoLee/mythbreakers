@@ -1,10 +1,11 @@
 import { SheetProps } from "../components/sheet";
 
-// Gura's character sheet at the start of the first tutorial session
-// https://youtu.be/_MiGxbsKyO8?t=978
 export const d00601Gura: SheetProps = {
   metaTitle: "Myth Breakers: Gura/Scout",
   metaDescription: "Myth Breakers fan page for Gura/Scout for the Hololive EN, Hunter Myth: Myth Breakers TTRPG campaign.",
+
+  source: "https://youtu.be/4hB5QuSYBKw?t=309",
+  sourceDescription: "Gura's character sheet at the start of her first tutorial session",
 
   name: "Scout from Belt-buckle",
   player: "Gura",
