@@ -1,8 +1,8 @@
 import Sheet from "../components/sheet";
-import { gura001 } from "../data/gura-001";
+import { d00601Gura } from "../data/d006-01-gura";
 
 export default function Gura() {
   return (
-    <Sheet {...gura001} />
+    <Sheet {...d00601Gura} />
   )
 }
