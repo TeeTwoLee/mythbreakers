@@ -1,1 +1,0 @@
-self.__BUILD_MANIFEST={__rewrites:{beforeFiles:[],afterFiles:[],fallback:[]},"/_error":["static/chunks/pages/_error-a0e21b9b223f827fe1f2.js"],"/gura":["static/chunks/pages/gura-0e45a0e1d57b165f1eeb.js"],sortedPages:["/_app","/_error","/gura"]},self.__BUILD_MANIFEST_CB&&self.__BUILD_MANIFEST_CB();
