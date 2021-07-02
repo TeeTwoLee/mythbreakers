@@ -39,7 +39,7 @@ export default function Gura() {
                 <div><a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="A short description of your character.">Concept</a>: <b>Southern Farm Girl Forger</b></div>
               </div>
               <div className="col-md">
-                <div>Profession: <b>Farmer</b></div>
+                <div>Profession: <b>Farm-hand</b></div>
                 <div>Compact/Conspiracy: <b></b></div>
               </div>
             </div>
@@ -52,15 +52,17 @@ export default function Gura() {
               <p>
                 Rolls: Success on 8, 9, 10. Reroll 10s.
                 <br/>
-                Perception check (5) = Wits (4) + Composure (1)
+                Perception check (4) = Wits (2) + Composure (2)
                 <br/>
-                Persuasion = Persuasion (-1) + (Manipulation (2) or Presence (1))
+                Memory (3) = Wits (2) + Intelligence (1)
+                <br/>
+                Persuasion (2) = Persuasion (-1) + (Manipulation (1) or Presence (3))
                 <br/>
                 <input className="form-check-input checkbox-round" type="checkbox" value=""/> Reroll one crafts roll (Renowned Artisan)
                 <br/>
-                Ignore 1 fatigue/wound (Iron Stamina)
+                Ignore 2 fatigue/wound (Iron Stamina)
                 <br/>
-                Add 3 dice to rolls against disease, poison, deprivation, suffocation and unconsciousness (Hardy)
+                Add 1 dice to rolls against disease, poison, deprivation, suffocation and unconsciousness (Hardy)
               </p>
             </div>
           </div>
