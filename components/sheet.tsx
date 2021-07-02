@@ -231,6 +231,8 @@ export default function Sheet(props: SheetProps) {
             This character sheet lets you click on the merits and flaws to see additional details. Check out the <a href="https://youtube.com/playlist?list=PLOdqKo8BGAdhgmdU8CxkhY1ebt0ZMtgdI">Hololive EN TTRPG</a>.
             <br/>
             {props.sourceDescription && <React.Fragment> {props.sourceDescription}</React.Fragment>}{props.source && <React.Fragment> (<a href={props.source}>source</a>)</React.Fragment>}
+            <br/>
+            See <Link href="/kiara.html">Kiara/Tiara</Link>, <Link href="/ina.html">Ina/Yuul</Link>, <Link href="/ame.html">Ame/Watoto</Link>, or <Link href="/gura.html">Gura/Scout</Link>.
           </div>
 
           <h1 className="text-center">Hunter: The Vigil</h1>
