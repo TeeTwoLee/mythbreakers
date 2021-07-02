@@ -1,6 +1,8 @@
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: "/mythbreakers",
+  basePath: isProd ? "/mythbreakers" : "",
   // https://github.com/vercel/next.js/issues/21079
   // Remove the workaround the issue is fixed
   images: {

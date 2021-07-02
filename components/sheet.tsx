@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import { useRouter } from 'next/router'
 import { meritData, meritName } from '../data/merits';
 import { flawData, flawName } from '../data/flaws';
 
@@ -195,6 +196,8 @@ function moralityBlock(num: number, checked: boolean) {
 }
 
 export default function Sheet(props: SheetProps) {
+  const router = useRouter();
+  const basePath = router.basePath;
 
   const longMerits = [...props.merits, undefined];
   longMerits.length = Math.max(props.merits.length, 10);
@@ -742,7 +745,7 @@ export default function Sheet(props: SheetProps) {
 
       {/* <!-- Scripts --> */}
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossOrigin="anonymous"></Script>
-      <Script src="/script.js"></Script>
+      <Script src={`${basePath}/bootstrap-script.js`}></Script>
     </>
   )
 }
