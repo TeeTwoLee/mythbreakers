@@ -113,7 +113,7 @@ function numberToCircleWithPadding(num: number = 0, total: number) {
   const arr: React.ReactNode[] = [];
   arr.length = total;
 
-  const checked = <input className="form-check-input checkbox-round checkbox-sm checkbox-sm-top-margin" type="checkbox" value="" checked/>;
+  const checked = <input className="form-check-input checkbox-round checkbox-sm checkbox-sm-top-margin" type="checkbox" value="" defaultChecked/>;
   const unchecked = <input className="form-check-input checkbox-round checkbox-sm checkbox-sm-top-margin" type="checkbox" value=""/>;
 
   return arr.fill(checked, 0, num).fill(unchecked, num, total).map(addKey);
@@ -123,7 +123,7 @@ function numberToCircleNoPadding(num: number = 0, total: number) {
   const arr: React.ReactNode[] = [];
   arr.length = total;
 
-  const checked = <input className="form-check-input checkbox-round checkbox-sm" type="checkbox" value="" checked/>
+  const checked = <input className="form-check-input checkbox-round checkbox-sm" type="checkbox" value="" defaultChecked/>
   const unchecked = <input className="form-check-input checkbox-round checkbox-sm" type="checkbox" value=""/>
 
   return arr.fill(checked, 0, num).fill(unchecked, num, total).map(addKey);
@@ -133,7 +133,7 @@ function numberToSquare(num: number = 0, total: number) {
   const arr: React.ReactNode[] = [];
   arr.length = total;
 
-  const checked = <input className="form-check-input checkbox-square checkbox-sm" type="checkbox" value="" checked/>
+  const checked = <input className="form-check-input checkbox-square checkbox-sm" type="checkbox" value="" defaultChecked/>
   const unchecked = <input className="form-check-input checkbox-square checkbox-sm" type="checkbox" value=""/>
 
   return arr.fill(checked, 0, num).fill(unchecked, num, total).map(addKey);
@@ -143,14 +143,14 @@ function skillBlock(skillName: string, skill?: Skill) {
   return (
     <div className="font-size-sm">
       <div className="float-start">
-        <input className="form-check-input checkbox-square" type="checkbox" checked={!!(skill?.proficiency)}/>
+        <input className="form-check-input checkbox-square" type="checkbox" defaultChecked={!!(skill?.proficiency)}/>
         <label className="form-check-label">{skillName}</label>
       </div>
       <div className="float-end">
         {numberToCircleNoPadding(skill?.dots, 5)}
       </div>
       <div className="between-floats">
-        <input type="text" className="input-underline-only" placeholder="" value={skill?.proficiency}/>
+        <input type="text" className="input-underline-only" placeholder="" defaultValue={skill?.proficiency}/>
       </div>
     </div>
   );
@@ -164,8 +164,8 @@ function meritBlock(merit?: Merit) {
       </div>
       <div className="between-floats">
         {merit
-          ? <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={meritData[merit.meritName].description}><input type="text" className="input-underline-only" placeholder="" value={merit.meritName}/></a>
-          : <input type="text" className="input-underline-only" placeholder="" value=""/>
+          ? <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={meritData[merit.meritName].description}><input type="text" className="input-underline-only" placeholder="" defaultValue={merit.meritName}/></a>
+          : <input type="text" className="input-underline-only" placeholder=""/>
         }
       </div>
     </div>
@@ -176,8 +176,8 @@ function flawBlock(flaw?: Flaw) {
   return (
     <div className="between-floats">
       {flaw
-        ? <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={flawData[flaw.flawName].description}><input type="text" className="input-underline-only" placeholder="" value={`${flaw.flawName} (${flaw.dots})`}/></a>
-        : <input type="text" className="input-underline-only" placeholder="" value=""/>
+        ? <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={flawData[flaw.flawName].description}><input type="text" className="input-underline-only" placeholder="" defaultValue={`${flaw.flawName} (${flaw.dots})`}/></a>
+        : <input type="text" className="input-underline-only" placeholder=""/>
       }
     </div>
   );
@@ -190,7 +190,7 @@ function moralityBlock(num: number, checked: boolean) {
         {num}
       </div>
       <div className="float-end">
-        <input className="form-check-input checkbox-round" type="checkbox" value="" checked={checked}/>
+        <input className="form-check-input checkbox-round" type="checkbox" value="" defaultChecked={checked}/>
       </div>
       <div className="between-floats">
         <input type="text" className="input-underline-only" placeholder=""/>
@@ -430,7 +430,7 @@ export default function Sheet(props: SheetProps) {
                         Size:
                       </div>
                       <div className="between-floats">
-                        <input type="text" className="input-underline-only" placeholder="" value={`${props.size}`}/>
+                        <input type="text" className="input-underline-only" placeholder="" defaultValue={`${props.size}`}/>
                       </div>
                     </div>
                     <div>
@@ -438,7 +438,7 @@ export default function Sheet(props: SheetProps) {
                         Speed:
                       </div>
                       <div className="between-floats">
-                        <input type="text" className="input-underline-only" placeholder="" value={`${props.strength + props.dexterity + 5}`}/>
+                        <input type="text" className="input-underline-only" placeholder="" defaultValue={`${props.strength + props.dexterity + 5}`}/>
                       </div>
                     </div>
                     <div>
@@ -446,7 +446,7 @@ export default function Sheet(props: SheetProps) {
                         Defense:
                       </div>
                       <div className="between-floats">
-                        <input type="text" className="input-underline-only" placeholder="" value={`${Math.min(props.dexterity, props.wits)}`}/>
+                        <input type="text" className="input-underline-only" placeholder="" defaultValue={`${Math.min(props.dexterity, props.wits)}`}/>
                       </div>
                     </div>
                     <div>
@@ -462,7 +462,7 @@ export default function Sheet(props: SheetProps) {
                         Initiative Mod:
                       </div>
                       <div className="between-floats">
-                        <input type="text" className="input-underline-only" placeholder="" value={`${props.dexterity + props.composure}`}/>
+                        <input type="text" className="input-underline-only" placeholder="" defaultValue={`${props.dexterity + props.composure}`}/>
                       </div>
                     </div>
                   </div>
@@ -612,12 +612,12 @@ export default function Sheet(props: SheetProps) {
             <div className="col-md">
               <h2 className="text-center">History</h2>
               <div>
-                <textarea style={{width: "100%", minHeight: "200px"}} value={props.history}/>
+                <textarea style={{width: "100%", minHeight: "200px"}} defaultValue={props.history}/>
               </div>
               <h2 className="text-center">Description</h2>
               <div className="row">
                 <div>
-                  <textarea style={{width: "100%", minHeight: "100px"}} value={props.description}/>
+                  <textarea style={{width: "100%", minHeight: "100px"}} defaultValue={props.description}/>
                 </div>
 
                 <div className="col">
@@ -626,7 +626,7 @@ export default function Sheet(props: SheetProps) {
                       Age:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.age}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.age}/>
                     </div>
                   </div>
                   <div>
@@ -634,7 +634,7 @@ export default function Sheet(props: SheetProps) {
                       Hair:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.hair}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.hair}/>
                     </div>
                   </div>
                   <div>
@@ -642,7 +642,7 @@ export default function Sheet(props: SheetProps) {
                       Eyes:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.eyes}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.eyes}/>
                     </div>
                   </div>
                   <div>
@@ -650,7 +650,7 @@ export default function Sheet(props: SheetProps) {
                       Sex:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.sex}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.sex}/>
                     </div>
                   </div>
                 </div>
@@ -660,7 +660,7 @@ export default function Sheet(props: SheetProps) {
                       Height:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.height}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.height}/>
                     </div>
                   </div>
                   <div>
@@ -668,7 +668,7 @@ export default function Sheet(props: SheetProps) {
                       Weight:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.weight}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.weight}/>
                     </div>
                   </div>
                   <div>
@@ -676,7 +676,7 @@ export default function Sheet(props: SheetProps) {
                       Race:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.race}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.race}/>
                     </div>
                   </div>
                   <div>
@@ -684,7 +684,7 @@ export default function Sheet(props: SheetProps) {
                       Nationality:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" value={props.nationality}/>
+                      <input type="text" className="input-underline-only" placeholder="" defaultValue={props.nationality}/>
                     </div>
                   </div>
                 </div>
