@@ -1,6 +1,6 @@
 import { SheetProps } from "../components/sheet";
 
-export const d00601Gura: SheetProps = {
+export const d00701Gura: SheetProps = {
   metaTitle: "Myth Breakers: Gura/Scout",
   metaDescription: "Myth Breakers fan page for Gura/Scout for the Hololive EN, Hunter Myth: Myth Breakers TTRPG campaign.",
 
