@@ -32,3 +32,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ```
 npm run build
 ```
+
+Use the commit message "Deploy docs folder"
