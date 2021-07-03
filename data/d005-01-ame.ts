@@ -4,6 +4,7 @@ export const d00501Ame: SheetProps = {
   metaTitle: "Myth Breakers: Ame/Watoto",
   metaDescription: "Myth Breakers fan page for Ame/Watoto for the Hololive EN, Hunter Myth: Myth Breakers TTRPG campaign.",
 
+  id: "d00501ame",
   source: "https://youtu.be/bXwW-g6P3zI?t=776",
   sourceDescription: "Ame's character sheet at the start of the first tutorial session",
 

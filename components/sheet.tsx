@@ -26,6 +26,7 @@ export interface SheetProps {
   metaTitle: string
   metaDescription: string
 
+  id: string
   source?: string
   sourceDescription?: string
 
@@ -105,41 +106,41 @@ export interface SheetProps {
   nationality?: string
 }
 
-function addKey(node: React.ReactNode, index: number) {
-  return <React.Fragment key={index}>{node}</React.Fragment>;
+function addKey(node: React.ReactNode, index: number, id: string) {
+  return <React.Fragment key={`${id}${index}`}>{node}</React.Fragment>;
 }
 
-function numberToCircleWithPadding(num: number = 0, total: number) {
+function numberToCircleWithPadding(num: number = 0, total: number, id: string) {
   const arr: React.ReactNode[] = [];
   arr.length = total;
 
   const checked = <input className="form-check-input checkbox-round checkbox-sm checkbox-sm-top-margin" type="checkbox" value="" defaultChecked/>;
   const unchecked = <input className="form-check-input checkbox-round checkbox-sm checkbox-sm-top-margin" type="checkbox" value=""/>;
 
-  return arr.fill(checked, 0, num).fill(unchecked, num, total).map(addKey);
+  return arr.fill(checked, 0, num).fill(unchecked, num, total).map((e, index) => addKey(e, index, id));
 }
 
-function numberToCircleNoPadding(num: number = 0, total: number) {
+function numberToCircleNoPadding(num: number = 0, total: number, id: string) {
   const arr: React.ReactNode[] = [];
   arr.length = total;
 
   const checked = <input className="form-check-input checkbox-round checkbox-sm" type="checkbox" value="" defaultChecked/>
   const unchecked = <input className="form-check-input checkbox-round checkbox-sm" type="checkbox" value=""/>
 
-  return arr.fill(checked, 0, num).fill(unchecked, num, total).map(addKey);
+  return arr.fill(checked, 0, num).fill(unchecked, num, total).map((e, index) => addKey(e, index, id));
 }
 
-function numberToSquare(num: number = 0, total: number) {
+function numberToSquare(num: number = 0, total: number, id: string) {
   const arr: React.ReactNode[] = [];
   arr.length = total;
 
   const checked = <input className="form-check-input checkbox-square checkbox-sm" type="checkbox" value="" defaultChecked/>
   const unchecked = <input className="form-check-input checkbox-square checkbox-sm" type="checkbox" value=""/>
 
-  return arr.fill(checked, 0, num).fill(unchecked, num, total).map(addKey);
+  return arr.fill(checked, 0, num).fill(unchecked, num, total).map((e, index) => addKey(e, index, id));
 }
 
-function skillBlock(skillName: string, skill?: Skill) {
+function skillBlock(id: string, skillName: string, skill?: Skill) {
   return (
     <div className="font-size-sm">
       <div className="float-start">
@@ -147,7 +148,7 @@ function skillBlock(skillName: string, skill?: Skill) {
         <label className="form-check-label">{skillName}</label>
       </div>
       <div className="float-end">
-        {numberToCircleNoPadding(skill?.dots, 5)}
+        {numberToCircleNoPadding(skill?.dots, 5, id)}
       </div>
       <div className="between-floats">
         <input type="text" className="input-underline-only" placeholder="" defaultValue={skill?.proficiency}/>
@@ -156,11 +157,11 @@ function skillBlock(skillName: string, skill?: Skill) {
   );
 }
 
-function meritBlock(merit?: Merit) {
+function meritBlock(id: string, merit?: Merit) {
   return (
     <div>
       <div className="float-end">
-        {numberToCircleWithPadding(merit?.dots, 5)}
+        {numberToCircleWithPadding(merit?.dots, 5, id)}
       </div>
       <div className="between-floats">
         {merit
@@ -199,6 +200,30 @@ function moralityBlock(num: number, checked: boolean) {
   );
 }
 
+function statBlock(id: string, text: string, popoverText: string, value: number) {
+  return (
+    <div>
+      <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={popoverText}>{text}</a>
+      <div className="float-end">
+        {numberToCircleWithPadding(value, 5, id)}
+      </div>
+    </div>
+  )
+}
+
+function miniDescription(text: string, defaultValue?: string) {
+  return (
+    <div>
+      <div className="float-start">
+        {text}
+      </div>
+      <div className="between-floats">
+        <input type="text" className="input-underline-only" placeholder="" defaultValue={defaultValue}/>
+      </div>
+    </div>
+  )
+}
+
 export default function Sheet(props: SheetProps) {
   const router = useRouter();
   const basePath = router.basePath;
@@ -230,8 +255,6 @@ export default function Sheet(props: SheetProps) {
           This character sheet lets you click on the merits and flaws to see additional details. Check out the <a href="https://youtube.com/playlist?list=PLOdqKo8BGAdhgmdU8CxkhY1ebt0ZMtgdI">Hololive EN TTRPG</a>.
           <br/>
           {props.sourceDescription && <React.Fragment> {props.sourceDescription}</React.Fragment>}{props.source && <React.Fragment> (<a href={props.source}>source</a>)</React.Fragment>}
-          <br/>
-          See <Link href="/kiara.html">Kiara/Tiara</Link>, <Link href="/ina.html">Ina/Yuul</Link>, <Link href="/ame.html">Ame/Watoto</Link>, or <Link href="/gura.html">Gura/Scout</Link>.
         </div>
 
         <h1 className="text-center">Hunter: The Vigil</h1>
@@ -279,64 +302,31 @@ export default function Sheet(props: SheetProps) {
               <div>Resistance</div>
             </div>
             <div className="col-md border">
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Long-term smarts">Intelligence</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.intelligence, 5)}
-                </div>
-              </div>
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="In-the-moment smarts">Wits</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.wits, 5)}
-                </div>
-              </div>
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Mental will to withstand difficult things">Resolve</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.resolve, 5)}
-                </div>
-              </div>
+              {
+                [
+                  { text: "Intelligence", popoverText: "Long-term smarts", value: props.intelligence },
+                  { text: "Wits", popoverText: "In-the-moment smarts", value: props.wits },
+                  { text: "Resolve", popoverText: "Mental will to withstand difficult things", value: props.resolve },
+                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value))
+              }
             </div>
             <div className="col-md border">
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Physical strength">Strength</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.strength, 5)}
-                </div>
-              </div>
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Being agile or good with your hands">Dexterity</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.dexterity, 5)}
-                </div>
-              </div>
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Physical stamina">Stamina</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.stamina, 5)}
-                </div>
-              </div>
+              {
+                [
+                  { text: "Strength", popoverText: "Physical strength", value: props.strength },
+                  { text: "Dexterity", popoverText: "Being agile or good with your hands", value: props.dexterity },
+                  { text: "Stamina", popoverText: "Physical stamina", value: props.stamina },
+                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value))
+              }
             </div>
             <div className="col-md border">
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Ability to gather and maintain attention">Presence</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.presence, 5)}
-                </div>
-              </div>
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Ability to change other people's minds and trick them">Manipulation</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.manipulation, 5)}
-                </div>
-              </div>
-              <div>
-                <a tabIndex={0} className="link-dark" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="Ability to stay calm">Composure</a>
-                <div className="float-end">
-                  {numberToCircleWithPadding(props.composure, 5)}
-                </div>
-              </div>
+              {
+                [
+                  { text: "Presence", popoverText: "Ability to gather and maintain attention", value: props.presence },
+                  { text: "Manipulation", popoverText: "Ability to change other people's minds and trick them", value: props.manipulation },
+                  { text: "Composure", popoverText: "Ability to stay calm", value: props.composure },
+                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value))
+              }
             </div>
           </div>
         </div>
@@ -360,7 +350,7 @@ export default function Sheet(props: SheetProps) {
                     { skillName: "Occult", skill: props.occult },
                     { skillName: "Politics", skill: props.politics },
                     { skillName: "Science", skill: props.science },
-                  ].map((e) => skillBlock(e.skillName, e.skill)).map(addKey)
+                  ].map((e) => skillBlock(props.id, e.skillName, e.skill)).map((e, index) => addKey(e, index, props.id))
                 }
               </div>
               {/* <!-- Physical --> */}
@@ -377,7 +367,7 @@ export default function Sheet(props: SheetProps) {
                     { skillName: "Stealth", skill: props.stealth },
                     { skillName: "Survival", skill: props.survival },
                     { skillName: "Weaponry", skill: props.weaponry },
-                  ].map((e) => skillBlock(e.skillName, e.skill)).map(addKey)
+                  ].map((e) => skillBlock(props.id, e.skillName, e.skill)).map((e, index) => addKey(e, index, props.id))
                 }
               </div>
               {/* <!-- Social --> */}
@@ -394,7 +384,7 @@ export default function Sheet(props: SheetProps) {
                     { skillName: "Socialize", skill: props.socialize },
                     { skillName: "Streetwise", skill: props.streetwise },
                     { skillName: "Subterfuge", skill: props.subterfuge },
-                  ].map((e) => skillBlock(e.skillName, e.skill)).map(addKey)
+                  ].map((e) => skillBlock(props.id, e.skillName, e.skill)).map((e, index) => addKey(e, index, props.id))
                 }
               </div>
             </div>
@@ -411,7 +401,7 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Merits</h3>
                   <div>
                     {
-                      longMerits.map((merit) => meritBlock(merit)).map(addKey)
+                      longMerits.map((merit) => meritBlock(props.id, merit)).map((e, index) => addKey(e, index, props.id))
                     }
                   </div>
                 </div>
@@ -420,7 +410,7 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Flaws</h3>
                   <div>
                     {
-                      longFlaws.map((flaw) => flawBlock(flaw)).map(addKey)
+                      longFlaws.map((flaw) => flawBlock(flaw)).map((e, index) => addKey(e, index, props.id))
                     }
                   </div>
                 </div>
@@ -475,12 +465,12 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Health</h3>
                   <div className="text-center font-size-sm">
                     {
-                      numberToCircleNoPadding(props.stamina + props.size, 12)
+                      numberToCircleNoPadding(props.stamina + props.size, 12, props.id)
                     }
                   </div>
                   <div className="text-center font-size-sm">
                     {
-                      numberToSquare(0, 12)
+                      numberToSquare(0, 12, props.id)
                     }
                   </div>
                 </div>
@@ -489,12 +479,12 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Willpower</h3>
                   <div className="text-center font-size-sm">
                     {
-                      numberToCircleNoPadding(props.resolve + props.composure, 10)
+                      numberToCircleNoPadding(props.resolve + props.composure, 10, props.id)
                     }
                   </div>
                   <div className="text-center font-size-sm">
                     {
-                      numberToSquare(0, 10)
+                      numberToSquare(0, 10, props.id)
                     }
                   </div>
                   <div className="text-center font-size-sm">
@@ -506,7 +496,7 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Morality</h3>
                   <div>
                     {
-                      Array(10).fill(0).map((_, i) => i+1).reverse().map(e => moralityBlock(e, e === props.morality)).map(addKey)
+                      Array(10).fill(0).map((_, i) => i+1).reverse().map(e => moralityBlock(e, e === props.morality)).map((e, index) => addKey(e, index, props.id))
                     }
                   </div>
                 </div>
@@ -613,81 +603,33 @@ export default function Sheet(props: SheetProps) {
           <div className="col-md">
             <h2 className="text-center">History</h2>
             <div>
-              <textarea style={{width: "100%", minHeight: "200px"}} defaultValue={props.history}/>
+              <textarea key={props.id} style={{width: "100%", minHeight: "200px"}} defaultValue={props.history}/>
             </div>
             <h2 className="text-center">Description</h2>
             <div className="row">
               <div>
-                <textarea style={{width: "100%", minHeight: "100px"}} defaultValue={props.description}/>
+                <textarea key={props.id} style={{width: "100%", minHeight: "100px"}} defaultValue={props.description}/>
               </div>
 
               <div className="col">
-                <div>
-                  <div className="float-start">
-                    Age:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.age}/>
-                  </div>
-                </div>
-                <div>
-                  <div className="float-start">
-                    Hair:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.hair}/>
-                  </div>
-                </div>
-                <div>
-                  <div className="float-start">
-                    Eyes:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.eyes}/>
-                  </div>
-                </div>
-                <div>
-                  <div className="float-start">
-                    Sex:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.sex}/>
-                  </div>
-                </div>
+                {
+                  [
+                    { text: "Age:", defaultValue: props.age },
+                    { text: "Hair:", defaultValue: props.hair },
+                    { text: "Eyes:", defaultValue: props.eyes },
+                    { text: "Sex:", defaultValue: props.sex },
+                  ].map(e => miniDescription(e.text, e.defaultValue)).map((e, index) => addKey(e, index, props.id))
+                }
               </div>
               <div className="col">
-                <div>
-                  <div className="float-start">
-                    Height:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.height}/>
-                  </div>
-                </div>
-                <div>
-                  <div className="float-start">
-                    Weight:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.weight}/>
-                  </div>
-                </div>
-                <div>
-                  <div className="float-start">
-                    Race:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.race}/>
-                  </div>
-                </div>
-                <div>
-                  <div className="float-start">
-                    Nationality:
-                  </div>
-                  <div className="between-floats">
-                    <input type="text" className="input-underline-only" placeholder="" defaultValue={props.nationality}/>
-                  </div>
-                </div>
+                {
+                  [
+                    { text: "Height:", defaultValue: props.height },
+                    { text: "Weight:", defaultValue: props.weight },
+                    { text: "Race:", defaultValue: props.race },
+                    { text: "Nationality:", defaultValue: props.nationality },
+                  ].map(e => miniDescription(e.text, e.defaultValue)).map((e, index) => addKey(e, index, props.id))
+                }
               </div>
             </div>
             <h2 className="text-center">Expanded Endowments</h2>
@@ -745,7 +687,7 @@ export default function Sheet(props: SheetProps) {
         </div>
 
         <div className="mb-2 mt-2 p-1 border">
-          This is a work-in-progress. Currently, this version only has the first page of Gura&apos;s character sheet, but I plan to add all the members and all versions of their character sheet. Thanks to Mr. Gone for letting me base my site off of his character sheets. Feedback welcome at TeeTwoLee at Gmail, on <a href="https://twitter.com/TeeTwoLee">Twitter</a>, or on <a href="https://www.reddit.com/user/TeeTwoLee/">Reddit</a>.
+          This is a work-in-progress.I plan to add a story summary and all versions of their character sheet. Thanks to Mr. Gone for letting me base my site off of his character sheets. Feedback welcome at TeeTwoLee at Gmail, on <a href="https://twitter.com/TeeTwoLee">Twitter</a>, or on <a href="https://www.reddit.com/user/TeeTwoLee/">Reddit</a>.
         </div>
       </div>
 

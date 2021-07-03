@@ -4,6 +4,7 @@ export const d00401Ina: SheetProps = {
   metaTitle: "Myth Breakers: Ina/Yuul",
   metaDescription: "Myth Breakers fan page for Ina/Yuul for the Hololive EN, Hunter Myth: Myth Breakers TTRPG campaign.",
 
+  id: "d00401ina",
   source: "https://youtu.be/bXwW-g6P3zI?t=776",
   sourceDescription: "Ina's character sheet at the start of the first tutorial session",
 

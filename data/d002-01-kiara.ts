@@ -4,6 +4,7 @@ export const d00201Kiara: SheetProps = {
   metaTitle: "Myth Breakers: Kiara/Tiara",
   metaDescription: "Myth Breakers fan page for Kiara/Tiara for the Hololive EN, Hunter Myth: Myth Breakers TTRPG campaign.",
 
+  id: "d00201kiara",
   source: "https://youtu.be/4hB5QuSYBKw?t=321",
   sourceDescription: "Kiara's character sheet at the start of the first tutorial session",
 
