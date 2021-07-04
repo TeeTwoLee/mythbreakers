@@ -306,7 +306,7 @@ export default function Sheet(props: SheetProps) {
                   { text: "Intelligence", popoverText: "Long-term smarts", value: props.intelligence },
                   { text: "Wits", popoverText: "In-the-moment smarts", value: props.wits },
                   { text: "Resolve", popoverText: "Mental will to withstand difficult things", value: props.resolve },
-                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value))
+                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value)).map((e, index) => addKey(e, index, props.id))
               }
             </div>
             <div className="col-md border">
@@ -315,7 +315,7 @@ export default function Sheet(props: SheetProps) {
                   { text: "Strength", popoverText: "Physical strength", value: props.strength },
                   { text: "Dexterity", popoverText: "Being agile or good with your hands", value: props.dexterity },
                   { text: "Stamina", popoverText: "Physical stamina", value: props.stamina },
-                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value))
+                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value)).map((e, index) => addKey(e, index, props.id))
               }
             </div>
             <div className="col-md border">
@@ -324,7 +324,7 @@ export default function Sheet(props: SheetProps) {
                   { text: "Presence", popoverText: "Ability to gather and maintain attention", value: props.presence },
                   { text: "Manipulation", popoverText: "Ability to change other people's minds and trick them", value: props.manipulation },
                   { text: "Composure", popoverText: "Ability to stay calm", value: props.composure },
-                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value))
+                ].map((e) => statBlock(props.id, e.text, e.popoverText, e.value)).map((e, index) => addKey(e, index, props.id))
               }
             </div>
           </div>
