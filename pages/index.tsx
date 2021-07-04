@@ -74,8 +74,8 @@ export default function Home() {
             title={sessionTitle}
             onChange={sessionOnChange}
             items={[
-              { text: "Tutorial Session (start)", value: "tutorialSessionStart" },
               { text: "Tutorial Session (end)", value: "tutorialSessionEnd" },
+              { text: "Tutorial Session (start)", value: "tutorialSessionStart" },
             ]}
           />
         </div>
