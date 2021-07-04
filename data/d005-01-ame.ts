@@ -55,6 +55,8 @@ export const d00501Ame: SheetProps = {
 
   size: 5,
 
+  health: 3 + 5, // stamina + size
+  willpower: 1 + 3, // resolve + composure
   morality: 7,
 
   history: "Watoto came from Watoto from mother Watoto and father Watoto, who hate the government and raised Watoto to take over the family owned herb business.",

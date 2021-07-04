@@ -90,6 +90,8 @@ export interface SheetProps {
 
   size: number // 5 for adult humans
 
+  health: number
+  willpower: number
   morality: number
 
   history?: string
@@ -464,7 +466,7 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Health</h3>
                   <div className="text-center font-size-sm">
                     {
-                      numberToCircleNoPadding(props.stamina + props.size, 12, props.id)
+                      numberToCircleNoPadding(props.health, 12, props.id)
                     }
                   </div>
                   <div className="text-center font-size-sm">
@@ -478,7 +480,7 @@ export default function Sheet(props: SheetProps) {
                   <h3 className="text-center">Willpower</h3>
                   <div className="text-center font-size-sm">
                     {
-                      numberToCircleNoPadding(props.resolve + props.composure, 10, props.id)
+                      numberToCircleNoPadding(props.willpower, 10, props.id)
                     }
                   </div>
                   <div className="text-center font-size-sm">

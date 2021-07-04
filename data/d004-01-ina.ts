@@ -58,6 +58,8 @@ export const d00401Ina: SheetProps = {
 
   size: 5,
 
+  health: 1 + 5, // stamina + size
+  willpower: 2 + 4, // resolve + composure
   morality: 7,
 
   history: "A typical grad student. She thought she was going to have a relatively normal experience during her graduate studies, but her hopes were shattered when the professor in charge was a bit on the... crazier side. Starting from daily chores and errands to dangerous deliveries and adventures in foreign lands, Yuul has experienced quite a lot during her time under the professor. Some would classify Yuul as a \"mad\" scientist type, but that is just a misconception as she often has to take credit for her professor's doings. Yuul often dreams of the days where she can sleep peacefully without having to worry about what new problems await her the next day. Driving is a hobby...?\n\nThe professor is a lab hermit.",

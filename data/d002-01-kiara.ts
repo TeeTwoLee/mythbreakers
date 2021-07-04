@@ -56,6 +56,8 @@ export const d00201Kiara: SheetProps = {
 
   size: 5,
 
+  health: 3 + 5, // stamina + size
+  willpower: 3 + 2, // resolve + composure
   morality: 7,
 
   // history: "",

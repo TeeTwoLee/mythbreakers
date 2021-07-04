@@ -51,6 +51,8 @@ export const d00701Gura: SheetProps = {
 
   size: 5,
 
+  health: 3 + 5, // stamina + size
+  willpower: 4 + 2, // resolve + composure
   morality: 7,
 
   history: "Comes from the very small town of Beltbuckle. A young woman who grew up on her family's farm with her ma, pa, and her younger sister. Not much happens in Belt Buckle. The town has 25 people in it. So she introduces herself as Scout from Belt Buckle. At a very young age, her pa taught her how to forge horseshoes and she felt that knives were the next step, so she knows how to forge things. Forging has caused her hearing to get worse since she rarely wore ear protection. She likes doing donuts and driving recklessly with pa's old Ford. Pa would rather she be useful and put a tractor to use, Scout doesn't think they go fast enough. Scout was never taught to read past basic labels such as toxic, do not ingest, and her social skills are very lacking. Scout has ample rural survival skills, little to no knowledge of modern cityfolk skills aside from what she learned from outdated VHS and DVD tapes. Farm life for Scout has been rather lonely. Aside from her family's company and those around her in Belt Buckle, she's been alone for the majority of her life. She lacks empathy and can be selfish due to always having to make things work for herself.",
