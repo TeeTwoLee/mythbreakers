@@ -686,7 +686,10 @@ export default function Sheet(props: SheetProps) {
         </div>
 
         <div className="mb-2 mt-2 p-1 border">
-          This is a work-in-progress.I plan to add a story summary and all versions of their character sheet. Thanks to Mr. Gone for letting me base my site off of his character sheets. Feedback welcome at TeeTwoLee at Gmail, on <a href="https://twitter.com/TeeTwoLee">Twitter</a>, or on <a href="https://www.reddit.com/user/TeeTwoLee/">Reddit</a>.
+          This is a work-in-progress. I plan to add a story summary and all versions of their character sheet. Thanks to <a href="https://mrgone.rocksolidshells.com/wod.html#htv">Mr. Gone</a> for letting me base my site off of his character sheets. Feedback welcome at TeeTwoLee at Gmail, on <a href="https://twitter.com/TeeTwoLee">Twitter</a>, or on <a href="https://www.reddit.com/user/TeeTwoLee/">Reddit</a>.
+          <br/>
+          <br/>
+          I took the merits from the <a href="http://wodcodex.com/wiki/Merits,_Universal_(2nd_Edition)">Codex of Darkness wiki</a> and I took the flaws from the <a href="http://mistsofmemory.net/wiki/doku.php?id=general_flaws">World of Darkness: Dusk mists of memory wiki</a>. I don&apos;t know which version of World of Darkness Calli is playing, so the descriptions are likely not completely accurate. Additionally, Calli is not a rule lawyer so she will likely be flexible with interactions.
         </div>
       </div>
 
