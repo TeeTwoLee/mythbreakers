@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sheet, { SheetProps } from "../components/sheet";
 import { sessions, sessionsType } from "../data/sessions";
 
@@ -27,23 +27,27 @@ function Select(props: SelectProps) {
   )
 }
 
-const hashArgsToHash = (hashArgs: { [key: string]: string | undefined }): string => {
-  return Object.entries(hashArgs).reduce((prev, curr) => `${prev}&${curr[0]}=${curr[1]}`, "").substr(1);
-}
-
-export default function Home() {
-  const hash = typeof window !== 'undefined' ? window.location.hash.substr(1) : "";
-  const hashArgs = hash.split('&').reduce(function (res: { [key: string]: string | undefined }, item) {
+const hashToHashArgs = (hash: string) => {
+  return hash.split('&').reduce(function (res: { [key: string]: string | undefined }, item) {
     var parts = item.split('=');
     if (parts[0]) {
       res[parts[0]] = parts[1];
     }
     return res;
   }, {});
+}
+
+const hashArgsToHash = (hashArgs: { [key: string]: string | undefined }): string => {
+  return Object.entries(hashArgs).reduce((prev, curr) => `${prev}&${curr[0]}=${curr[1]}`, "").substr(1);
+}
+
+export default function Home() {
+  const hash = typeof window !== 'undefined' ? window.location.hash.substr(1) : "";
+  const hashArgs = React.useMemo(() => hashToHashArgs(hash), [hash]);
 
   const sessionKey = "session";
   const sessionTitle = "Session";
-  const [session, setSession] = React.useState(hashArgs[sessionKey]);
+  const [session, setSession] = React.useState("");
   const sessionOnChange = (event: React.BaseSyntheticEvent) => {
     if (event.target.value) {
       hashArgs[sessionKey] = event.target.value;
@@ -54,7 +58,7 @@ export default function Home() {
 
   const playerKey = "player";
   const playerTitle = "Player";
-  const [player, setPlayer] = React.useState(hashArgs[playerKey]);
+  const [player, setPlayer] = React.useState("");
   const playerOnChange = (event: React.BaseSyntheticEvent) => {
     if (event.target.value) {
       hashArgs[playerKey] = event.target.value;
@@ -62,6 +66,11 @@ export default function Home() {
       setPlayer(event.target.value);
     }
   }
+
+  React.useEffect(() => {
+    setSession(hashArgs[sessionKey] || "");
+    setPlayer(hashArgs[playerKey] || "");
+  }, [hashArgs]);
 
   const sheetProps: SheetProps | undefined = (session && player && (sessions as sessionsType)[session]?.[player]) || undefined;
 
