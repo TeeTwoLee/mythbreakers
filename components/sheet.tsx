@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { meritData, meritName } from '../data/merits';
 import { flawData, flawName } from '../data/flaws';
