@@ -253,7 +253,7 @@ export default function Sheet(props: SheetProps) {
       <div className="container">
         {/* <!-- Description --> */}
         <div className="mb-2">
-          This character sheet lets you click on the merits and flaws to see additional details. Check out the <a href="https://youtube.com/playlist?list=PLOdqKo8BGAdhgmdU8CxkhY1ebt0ZMtgdI">Hololive EN TTRPG</a>.
+          This character sheet lets you click on the merits and flaws to see additional details. To watch the series yourself, check out the <a href="https://www.youtube.com/playlist?list=PLB8Nt5W7hnKA-nna_2FcXRSeg0un0dogU">Hololive EN TTRPG playlist</a>.
           <br/>
           {props.sourceDescription && <React.Fragment> {props.sourceDescription}</React.Fragment>}{props.source && <React.Fragment> (<a href={props.source}>source</a>)</React.Fragment>}
         </div>
