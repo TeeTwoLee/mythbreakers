@@ -455,7 +455,7 @@ export default function Sheet(props: SheetProps) {
                       Size:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" defaultValue={`${props.size}`}/>
+                      <input key={props.id} type="text" className="input-underline-only" placeholder="" defaultValue={`${props.size}`}/>
                     </div>
                   </div>
                   <div>
@@ -463,7 +463,7 @@ export default function Sheet(props: SheetProps) {
                       Speed:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" defaultValue={`${props.strength + props.dexterity + 5}`}/>
+                      <input key={props.id} type="text" className="input-underline-only" placeholder="" defaultValue={`${props.strength + props.dexterity + 5}`}/>
                     </div>
                   </div>
                   <div>
@@ -471,7 +471,7 @@ export default function Sheet(props: SheetProps) {
                       Defense:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" defaultValue={`${Math.min(props.dexterity, props.wits)}`}/>
+                      <input key={props.id} type="text" className="input-underline-only" placeholder="" defaultValue={`${Math.min(props.dexterity, props.wits)}`}/>
                     </div>
                   </div>
                   <div>
@@ -479,7 +479,7 @@ export default function Sheet(props: SheetProps) {
                       Armor:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder=""/>
+                      <input key={props.id} type="text" className="input-underline-only" placeholder=""/>
                     </div>
                   </div>
                   <div>
@@ -487,7 +487,7 @@ export default function Sheet(props: SheetProps) {
                       Initiative Mod:
                     </div>
                     <div className="between-floats">
-                      <input type="text" className="input-underline-only" placeholder="" defaultValue={`${props.dexterity + props.composure}`}/>
+                      <input key={props.id} type="text" className="input-underline-only" placeholder="" defaultValue={`${props.dexterity + props.composure}`}/>
                     </div>
                   </div>
                 </div>
