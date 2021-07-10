@@ -26,5 +26,6 @@ export const d00402Ina: SheetProps = {
     { initialIcon: HealthSquareType.EmptySquare },
     { initialIcon: HealthSquareType.EmptySquare },
   ],
+  willpowerState: 3,
   morality: 7,
 }

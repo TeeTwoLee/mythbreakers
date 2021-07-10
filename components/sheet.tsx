@@ -99,6 +99,7 @@ export interface SheetProps {
   health: number
   healthState: HealthSquareProps[]
   willpower: number
+  willpowerState?: number
   morality: number
 
   history?: string
@@ -249,6 +250,8 @@ export default function Sheet(props: SheetProps) {
   const longFlaws = [...props.flaws, undefined];
   longFlaws.length = Math.max(props.flaws.length, 3);
   longFlaws.fill(undefined, props.flaws.length);
+
+  const willpowerState = props.willpowerState ?? 0;
 
   return (
     <>
@@ -517,7 +520,7 @@ export default function Sheet(props: SheetProps) {
                   </div>
                   <div className="text-center font-size-sm">
                     {
-                      numberToSquare(0, 10, props.id)
+                      numberToSquare(willpowerState, 10, props.id)
                     }
                   </div>
                   <div className="text-center font-size-sm">
