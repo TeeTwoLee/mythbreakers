@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { healthyState } from "./s002-healthy-state";
 
 export const d00401Ina: SheetProps = {
   metaTitle: "Myth Breakers: Ina/Yuul",
@@ -59,6 +60,7 @@ export const d00401Ina: SheetProps = {
   size: 5,
 
   health: 1 + 5, // stamina + size
+  healthState: healthyState,
   willpower: 2 + 4, // resolve + composure
   morality: 7,
 

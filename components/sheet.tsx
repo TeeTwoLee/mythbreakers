@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { meritData, meritName } from '../data/merits';
 import { flawData, flawName } from '../data/flaws';
 import darkPack from '../resources/darkpack.jpg';
+import { HealthSquare, HealthSquareProps } from './HealthSquare';
 
 export interface Skill {
   proficiency?: string
@@ -93,6 +94,7 @@ export interface SheetProps {
   size: number // 5 for adult humans
 
   health: number
+  healthState: HealthSquareProps[]
   willpower: number
   morality: number
 
@@ -141,6 +143,10 @@ function numberToSquare(num: number = 0, total: number, id: string) {
   const unchecked = <input className="form-check-input checkbox-square checkbox-sm" type="checkbox" value=""/>
 
   return arr.fill(checked, 0, num).fill(unchecked, num, total).map((e, index) => addKey(e, index, id));
+}
+
+function numberToHealthSquare(healthSquares: HealthSquareProps[], id: string) {
+  return healthSquares.map((props, index) => <HealthSquare key={`${id}${index}`} {...props} />);
 }
 
 function skillBlock(id: string, skillName: string, skill?: Skill) {
@@ -472,9 +478,11 @@ export default function Sheet(props: SheetProps) {
                     }
                   </div>
                   <div className="text-center font-size-sm">
+                    <div className="btn-group">
                     {
-                      numberToSquare(0, 12, props.id)
+                        numberToHealthSquare(props.healthState, props.id)
                     }
+                    </div>
                   </div>
                 </div>
                 {/* <!-- Willpower --> */}

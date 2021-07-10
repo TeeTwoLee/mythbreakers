@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { healthyState } from "./s002-healthy-state";
 
 export const d00501Ame: SheetProps = {
   metaTitle: "Myth Breakers: Ame/Watoto",
@@ -56,6 +57,7 @@ export const d00501Ame: SheetProps = {
   size: 5,
 
   health: 3 + 5, // stamina + size
+  healthState: healthyState,
   willpower: 1 + 3, // resolve + composure
   morality: 7,
 

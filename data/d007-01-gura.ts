@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { healthyState } from "./s002-healthy-state";
 
 export const d00701Gura: SheetProps = {
   metaTitle: "Myth Breakers: Gura/Scout",
@@ -52,6 +53,7 @@ export const d00701Gura: SheetProps = {
   size: 5,
 
   health: 3 + 5, // stamina + size
+  healthState: healthyState,
   willpower: 4 + 2, // resolve + composure
   morality: 7,
 

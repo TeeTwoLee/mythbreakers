@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { healthyState } from "./s002-healthy-state";
 
 export const d00201Kiara: SheetProps = {
   metaTitle: "Myth Breakers: Kiara/Tiara",
@@ -57,6 +58,7 @@ export const d00201Kiara: SheetProps = {
   size: 5,
 
   health: 3 + 5, // stamina + size
+  healthState: healthyState,
   willpower: 3 + 2, // resolve + composure
   morality: 7,
 
