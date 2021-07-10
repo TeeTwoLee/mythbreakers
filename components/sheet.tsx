@@ -696,6 +696,9 @@ export default function Sheet(props: SheetProps) {
           I took the merits from the <a href="http://wodcodex.com/wiki/Merits,_Universal_(2nd_Edition)">Codex of Darkness wiki</a> and I took the flaws from the <a href="http://mistsofmemory.net/wiki/doku.php?id=general_flaws">World of Darkness: Dusk mists of memory wiki</a>. I don&apos;t know which version of World of Darkness Calli is playing, so the descriptions are likely not completely accurate. Additionally, Calli is not a rule lawyer so she will likely be flexible with interactions.
           <br/>
           <br/>
+          I want to talk about Hunter Myth! Do you feel this way? If so, there&apos;s a discussion channel for Hunter Myth in most of the <a href="https://hololive.wiki/wiki/Fan_Discords#Hololive_English_1st_Generation">fan Discords</a>. I think the HololiveEN Fan Server and the Mori Calliope discussion channels are most active.
+          <br/>
+          <br/>
           This website is made in accordance with the World of Darkness <a href="https://www.worldofdarkness.com/dark-pack">Dark Pack</a> (fan activity) agreement.
           <br/>
           <div className="text-center">
