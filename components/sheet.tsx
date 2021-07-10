@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router'
 import { meritData, meritName } from '../data/merits';
 import { flawData, flawName } from '../data/flaws';
-import darkPack from '../public/darkpack.jpg';
+import darkPack from '../resources/darkpack.jpg';
 
 export interface Skill {
   proficiency?: string
