@@ -7,7 +7,7 @@ export const d00701Gura: SheetProps = {
   metaDescription: "Myth Breakers fan page for Gura/Scout for the Hololive EN, Hunter Myth: Myth Breakers TTRPG campaign.",
 
   id: "d00701gura",
-  source: "https://youtu.be/_MiGxbsKyO8?t=981",
+  source: "https://youtu.be/_MiGxbsKyO8?list=PLB8Nt5W7hnKA-nna_2FcXRSeg0un0dogU&t=981",
   sourceDescription: "Gura's character sheet at the start of her first tutorial session",
 
   ...s001TutorialSummary,

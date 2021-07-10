@@ -5,7 +5,7 @@ export const d00702Gura: SheetProps = {
   ...d00701Gura,
 
   id: "d00702gura",
-  source: "https://youtu.be/_MiGxbsKyO8",
+  source: "https://youtu.be/_MiGxbsKyO8?list=PLB8Nt5W7hnKA-nna_2FcXRSeg0un0dogU",
   sourceDescription: "Gura's character sheet at the end of her first tutorial session",
 
   summaryTitle: "Tutorial Session Summary (Spoilers)",
