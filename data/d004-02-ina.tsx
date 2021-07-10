@@ -18,7 +18,7 @@ export const d00402Ina: SheetProps = {
     { initialIcon: HealthSquareType.XSquare },
     { initialIcon: HealthSquareType.XSquare },
     { initialIcon: HealthSquareType.XSquare }, // 5
-    { initialIcon: HealthSquareType.XSquare },
+    { initialIcon: HealthSquareType.XSquare }, // max
     { initialIcon: HealthSquareType.EmptySquare },
     { initialIcon: HealthSquareType.EmptySquare },
     { initialIcon: HealthSquareType.EmptySquare },

@@ -1,3 +1,4 @@
+import { HealthSquareType } from "../components/HealthSquare";
 import { SheetProps } from "../components/sheet";
 import { d00201Kiara } from "./d002-01-kiara";
 
@@ -11,5 +12,19 @@ export const d00202Kiara: SheetProps = {
   summaryTitle: "Tutorial Session Summary (Spoilers)",
   summary: <>TODO</>,
 
+  healthState: [
+    { initialIcon: HealthSquareType.XSquare },
+    { initialIcon: HealthSquareType.XSquare },
+    { initialIcon: HealthSquareType.SlashSquare },
+    { initialIcon: HealthSquareType.EmptySquare },
+    { initialIcon: HealthSquareType.EmptySquare }, // 5
+    { initialIcon: HealthSquareType.EmptySquare },
+    { initialIcon: HealthSquareType.EmptySquare },
+    { initialIcon: HealthSquareType.EmptySquare }, // max
+    { initialIcon: HealthSquareType.EmptySquare },
+    { initialIcon: HealthSquareType.EmptySquare }, // 10
+    { initialIcon: HealthSquareType.EmptySquare },
+    { initialIcon: HealthSquareType.EmptySquare },
+  ],
   morality: 7,
 }
