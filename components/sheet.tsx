@@ -112,6 +112,8 @@ export interface SheetProps {
   weight?: string
   race?: string
   nationality?: string
+
+  additionalDescription?: string
 }
 
 function addKey(node: React.ReactNode, index: number, id: string) {
@@ -713,6 +715,12 @@ export default function Sheet(props: SheetProps) {
               <div className="col">
                 ?
               </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-center">Verbal Descriptions</h2>
+            <div>
+              <textarea key={props.id} style={{width: "100%", minHeight: "100px"}} defaultValue={props.additionalDescription}/>
             </div>
           </div>
         </div>
