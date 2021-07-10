@@ -6,7 +6,10 @@ export const d00502Ame: SheetProps = {
 
   id: "d00502ame",
   source: "https://youtu.be/bXwW-g6P3zI",
-  sourceDescription: "Ame's character sheet at the end of the first tutorial session",
+  sourceDescription: "Ame's character sheet at the end of her first tutorial session",
+
+  summaryTitle: "Tutorial Session Summary (Spoilers)",
+  summary: <>TODO</>,
 
   morality: 7,
 }

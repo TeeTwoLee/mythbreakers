@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { s001TutorialSummary } from "./s001-tutorial-summary";
 import { healthyState } from "./s002-healthy-state";
 
 export const d00201Kiara: SheetProps = {
@@ -7,7 +8,9 @@ export const d00201Kiara: SheetProps = {
 
   id: "d00201kiara",
   source: "https://youtu.be/4hB5QuSYBKw?t=321",
-  sourceDescription: "Kiara's character sheet at the start of the first tutorial session",
+  sourceDescription: "Kiara's character sheet at the start of her first tutorial session",
+
+  ...s001TutorialSummary,
 
   name: "Tiara",
   player: "Kiara",

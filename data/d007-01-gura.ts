@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { s001TutorialSummary } from "./s001-tutorial-summary";
 import { healthyState } from "./s002-healthy-state";
 
 export const d00701Gura: SheetProps = {
@@ -8,6 +9,8 @@ export const d00701Gura: SheetProps = {
   id: "d00701gura",
   source: "https://youtu.be/4hB5QuSYBKw?t=309",
   sourceDescription: "Gura's character sheet at the start of her first tutorial session",
+
+  ...s001TutorialSummary,
 
   name: "Scout from Belt-buckle",
   player: "Gura",

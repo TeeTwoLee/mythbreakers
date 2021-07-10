@@ -1,4 +1,5 @@
 import { SheetProps } from "../components/sheet";
+import { s001TutorialSummary } from "./s001-tutorial-summary";
 import { healthyState } from "./s002-healthy-state";
 
 export const d00401Ina: SheetProps = {
@@ -7,7 +8,9 @@ export const d00401Ina: SheetProps = {
 
   id: "d00401ina",
   source: "https://youtu.be/bXwW-g6P3zI?t=776",
-  sourceDescription: "Ina's character sheet at the start of the first tutorial session",
+  sourceDescription: "Ina's character sheet at the start of her first tutorial session",
+
+  ...s001TutorialSummary,
 
   name: "Yuul B. Alwright",
   player: "Ninomae Ina'nis",

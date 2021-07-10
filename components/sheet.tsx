@@ -32,6 +32,9 @@ export interface SheetProps {
   source?: string
   sourceDescription?: string
 
+  summaryTitle: string
+  summary: React.ReactNode
+
   // description
   name: string
   player: string
@@ -291,6 +294,23 @@ export default function Sheet(props: SheetProps) {
         {/* <!-- Cheat sheet --> */}
         <div>
           <h2 className="text-center">Cheat Sheet</h2>
+          <h3 className="text-center">Story</h3>
+          <div key={props.id} className="mt-2 mb-2">
+            <div className="accordion" id="accordionSummary">
+              <div className="accordion-item">
+                <h3 className="accordion-header" id="accordionHeading">
+                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    {props.summaryTitle}
+                  </button>
+                </h3>
+              </div>
+              <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="accordionHeading" data-bs-parent="#accordionSummary">
+                <div className="accordion-body">
+                  {props.summary}
+                </div>
+              </div>
+            </div>
+          </div>
           <h3 className="text-center">Rolls</h3>
           <div>
             <p>
@@ -302,7 +322,7 @@ export default function Sheet(props: SheetProps) {
           </div>
         </div>
         {/* <!-- Attributes --> */}
-        <div>
+        <div className="mt-2">
           <h2 className="text-center">Attributes</h2>
           <div className="row">
             <div className="col-md-2">
@@ -479,9 +499,9 @@ export default function Sheet(props: SheetProps) {
                   </div>
                   <div className="text-center font-size-sm">
                     <div className="btn-group">
-                    {
+                      {
                         numberToHealthSquare(props.healthState, props.id)
-                    }
+                      }
                     </div>
                   </div>
                 </div>
