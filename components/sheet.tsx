@@ -1,9 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import Image from 'next/image';
 import { useRouter } from 'next/router'
 import { meritData, meritName } from '../data/merits';
 import { flawData, flawName } from '../data/flaws';
+import darkPack from '../public/darkpack.jpg';
 
 export interface Skill {
   proficiency?: string
@@ -692,6 +694,14 @@ export default function Sheet(props: SheetProps) {
           <br/>
           <br/>
           I took the merits from the <a href="http://wodcodex.com/wiki/Merits,_Universal_(2nd_Edition)">Codex of Darkness wiki</a> and I took the flaws from the <a href="http://mistsofmemory.net/wiki/doku.php?id=general_flaws">World of Darkness: Dusk mists of memory wiki</a>. I don&apos;t know which version of World of Darkness Calli is playing, so the descriptions are likely not completely accurate. Additionally, Calli is not a rule lawyer so she will likely be flexible with interactions.
+          <br/>
+          <br/>
+          This website is made in accordance with the World of Darkness <a href="https://www.worldofdarkness.com/dark-pack">Dark Pack</a> (fan activity) agreement.
+          <br/>
+          <div className="text-center">
+            <Image width={185} height={122} src={darkPack} alt="Picture of Dark Pack logo" />
+            <div>&copy; Paradox Interactive. Trademarks belong to their respective owners.</div>
+          </div>
         </div>
       </div>
 
