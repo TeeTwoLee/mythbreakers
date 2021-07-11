@@ -58,6 +58,7 @@ export const d00701Gura: SheetProps = {
   health: 3 + 5, // stamina + size
   healthState: healthyState,
   willpower: 4 + 2, // resolve + composure
+  willpowerState: 6, // equal to starting willpower
   morality: 7,
 
   history: "- Grew up on a family farm in tiny BeltBuckle. Lives with Pa, Ma & sister.\n- Learned how to forge horseshoes at a young age, now forging blades.\n- Never taught to read. Can only read basic text.\n- She likes doing donuts with Pa's old ford. Was gifted a Harley for 18th bday.\n- Obsessed with watching old samurai & western films.\n- Growing up in BeltBuckle has taught her ample rural survival skills.\n- Lacks empathy & can be selfish due to having to make things work by herself.\n\nlikes kicking doors (down?)",

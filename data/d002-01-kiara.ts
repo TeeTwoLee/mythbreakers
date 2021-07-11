@@ -63,6 +63,7 @@ export const d00201Kiara: SheetProps = {
   health: 3 + 5, // stamina + size
   healthState: healthyState,
   willpower: 3 + 2, // resolve + composure
+  willpowerState: 5, // equal to starting willpower
   morality: 7,
 
   // history: "",
